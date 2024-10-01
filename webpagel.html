@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goku Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: grey;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex; 
+            align-items: center; 
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center; 
+            width: 80%; /* Set navbar width to 80% */
+            margin: 0 auto; /* Center the navbar */
+        }
+
+        h1 {
+            margin-right: auto; 
+            margin-left: 20px;
+        }
+
+        .navbar {
+            list-style-type: none;
+            padding: 0;
+            display: flex; 
+            margin: 0; 
+        }
+
+        .navbar li {
+            margin-right: 25px; 
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .right-nav {
+            display: flex;
+            align-items: center; 
+            margin-left: auto;
+        }
+
+        .right-nav a {
+            color: white;
+            margin-left: 20px;
+            padding: 5px 10px; 
+        }
+
+        .search {
+            margin-right: 15px; 
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 50%;
+            border: none;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+        }
+
+        .search-input::placeholder {
+            color: #aaa; /* Change the color of the placeholder */
+        }
+
+        .search button {
+            padding: 10px 15px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .hero {
+            display: flex;
+            height: 70vh; 
+            position: relative;
+            background-color: black; /* Added background color for hero section */
+        }
+
+        .hero-left {
+            width: 40%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: rgb(36, 34, 34);
+        }
+
+        .hero-image {
+            width: 60%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-list, .latest-movies, .latest-tv-series {
+            padding: 20px;
+            background-color: #201f1f;
+        }
+
+        .movie-list h2, .latest-movies h2, .latest-tv-series h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .movie-item img {
+            width: 100%;
+            border-radius: 5px;
+            height: auto; 
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+        }
+
+        .footer-container {
+            display: flex;
+            width: 50%;
+            margin-right: auto;
+            padding-left: 20px; 
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 150px; 
+            margin: 5px; 
+        }
+
+        .footer-section h3 {
+            margin-bottom: 5px; 
+            font-size: 16px; 
+        }
+
+        .footer-section p {
+            margin: 3px 0; 
+            font-size: 14px;
+        }
+
+        .footer-section a {
+            color: white; 
+            text-decoration: none; 
+        }
+
+        .footer-section a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Goku</h1>
+        <nav>
+            <ul class="navbar">   
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Genre</a></li>
+                <li><a href="#">Country</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Series</a></li>
+                <li><a href="#">TOP IMDb</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="#">Search</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>Over 66,000 Movies and TV Show Episodes available and still updating.</h1>
+                <p>Enjoy your Free HD Streaming Now!</p>
+                <div class="search">
+                    <input type="text" class="search-input" placeholder="Enter keywords...">
+                    <button type="button">🔍</button> <!-- Added search symbol -->
+                </div>
+            </div>
+        </div>
+        <div class="hero-image" style="background-image: url('assets/ac04c08481f19f5e1675153472cf5867.jpg');"></div>
+    </section>
+    
+    <section class="movie-list">
+        <h2>Movie List</h2>
+        <div class="movie-grid">
+            <div class="movie-item"><img src="assets/045db91c36915a09cf1a721e0a6d1b8f copy.jpg" alt="movie 2"></div>
+            <div class="movie-item"><img src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg" alt="movie 3"></div>
+            <div class="movie-item"><img src="assets/a8ff8bdcb4f403a9615cd4bb818da652.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/4e32cd198a40ad25220920c9f183d800.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/5dc36c675357241b761c923fa3dc53b7.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/mWV2fNBkSTW67dIotVTXDYZhNBj.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
+            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>         
+        </div>
+    </section>
+ 
+    <section class="latest-tv-series">
+        <h2>Latest TV Series</h2>
+        <div class="movie-grid">
+            <!-- Add TV series items here -->
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p><a href="#">Terms of Service</a></p>
+                <p><a href="#">Contact</a></p>
+                <p><a href="#">Sitemap</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Movies</h3>
+                <p><a href="#">Action</a></p>
+                <p><a href="#">Comedy</a></p>
+                <p><a href="#">Drama</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>TV Series</h3>
+                <p><a href="#">Fantasy</a></p>
+                <p><a href="#">Horror</a></p>
+                <p><a href="#">Mystery</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p><a href="#">Join Telegram Group</a></p>
+                <p><a href="#">Join Reddit Group</a></p>
+                <p><a href="#">Follow on Twitter</a></p>
+            </div>
+        </div>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+</html>
