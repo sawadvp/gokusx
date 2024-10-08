@@ -1,141 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Goku Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: grey;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: rgb(45, 48, 77);
+      }
 
-        header {
-            background-color: #333;
-            color: white;
-            display: flex; 
-            align-items: center; 
-            padding: 10px;
-        }
+      header {
+        background-color: #0c0c0c;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 60px;
+      }
 
-        nav {
-            display: flex;
-            align-items: center; 
-            width: 100%; 
-        }
+      header div img {
+        object-fit: cover;
+        width: full;
+        height: 60px;
+      }
 
-        h1 {
-            margin-right: auto; 
-            margin-left: 20px;
+      nav {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 5px;
+      }
+
+      h1 {
+        margin-right: auto;
+        margin-left: 20px;
+      }
+
+      .navbar {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        margin: 0;
+      }
+
+      .navbar li {
+        margin-right: 15px;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      .right-nav {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+
+      .right-nav a {
+        color: white;
+        margin-left: 20px;
+        padding: 5px 10px;
+         text-decoration: none;
+      }
+     .ml-2 {
+    margin-left: 5px; /* Adjust as needed */
+}
+
+      .search {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+    .search-input {
+    padding: 12px 15px; /* Top/bottom and left/right padding */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width for the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effect */
+}
+
+/* Change border color and add shadow on focus */
+.search-input:focus {
+    border-color: #ff4081; /* Change to your desired color */
+    box-shadow: 0 0 5px rgba(255, 64, 129, 0.5); /* Soft shadow */
+    outline: none; /* Remove default outline */
+}
+
+      .btn-submit {
+    display: inline-flex; /* Allows for vertical alignment of icon and text */
+    align-items: center; /* Centers items vertically */
+    padding: 15px 20px; /* Padding around the button */
+    background-color: #f04426; /* Background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+     margin-left: 5px;
+}
+
+/* Hover effect */
+.btn-submit:hover {
+    background-color: #e43b11; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Icon styles (if needed) */
+.btn-submit i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+      .hero {
+        display: flex;
+        height: 70vh;
+        position: relative;
+      }
+
+      .hero-left {
+        width: 40%;
+        background-color: rgb(14, 21, 41);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: rgb(247, 245, 245);
+      }
+
+      .hero-image {
+        width: 70%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+      }
+
+      .hero-content {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .movie-list,
+      .latest-movies,
+      .latest-tv-series {
+        padding: 20px;
+        background-color: #201f1f;
+      }
+
+      .movie-list h2,
+      .latest-movies h2,
+      .latest-tv-series h2 {
+        margin-bottom: 20px;
+        background-color: #201f1f;
        
-        }
+      }
+      .latest-movies{
+        background-color: #201f1f;
+      }
 
-        .navbar {
-            list-style-type: none;
-            padding: 0;
-            display: flex; 
-            margin: 0; 
-        }
+      .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
 
-        .navbar li {
-            margin-right: 25px; 
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-        }
-
-        .right-nav {
-            display: flex;
-            align-items: center; 
-            margin-left: auto;
-        }
-
-        .right-nav a {
-            color: white;
-            margin-left: 20px;
-            padding: 5px 10px; 
-        }
-
-        .search {
-            margin-right: 15px; 
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            padding: 10px;
-            width: 50%;
-            border: none;
-            border-radius: 10px;
-            background-color: rgb(204, 199, 199);
-            color: white;
-        }
-
-            .search button {
-            padding: 10px 15px;
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-left: 10px;
-            }
-
-        .hero {
-            display: flex;
-            height: 70vh; 
-            position: relative;
-        }
-
-        .hero-left {
-            width: 40%;
-            background-color: black;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: rgb(19, 17, 17);
-        }
-
-        .hero-image {
-            width: 60%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-content {
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .movie-list, .latest-movies, .latest-tv-series {
-            padding: 20px;
-            background-color: #201f1f;
-        }
-
-        .movie-list h2, .latest-movies h2, .latest-tv-series h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
-        }
-
-        .movie-item img {
-            width: 100%;
-            border-radius: 5px;
-            height: auto; 
-        }
-
-        footer {
+      .movie-item img {
+        width: 100%;
+        border-radius: 5px;
+        height: auto;
+      }
+  footer {
             padding: 20px;
             background-color: #333;
             color: white;
@@ -172,141 +215,268 @@
             text-decoration: none; 
         }
 
-       
         .footer-section a:hover {
             text-decoration: none;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <div style="width: 15%; height: 100%; background-color: black;">
+        .social-button:last-child {
+          margin-right: 0;
+      }
+      .social-button:hover {
+          background-color: #ff4081;
+          color: white;
+      }
 
-            <h1>Goku</h1>
-        </div>
-        <nav>
-            <ul class="navbar">   
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Genre</a>
-                </li>
-                <li>
-                    <a href="#">Country</a>
-                </li>
-                <li>
-                    <a href="#">Movies</a>
-                </li>
-                <li>
-                    <a href="#">TV Series</a>
-                </li>
-                <li>
-                    <a href="#">TOP IMDb</a>
-                </li>
-            </ul>
-            <div class="right-nav">
-                <a href="#">Search</a>
-                <a href="#">Login</a>
-            </div>
-        </nav>
+      .fotterbtn{
+        width: 160px;
+        height: 30px;
+        background: white;
+        border-radius: 10px;
+      }
+      .fa{
+        color: black;
+      }
+
+      /* Additional styles for footer */
+      footer {
+          background-color: #333;
+          color: white;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style="width: 15%; height: 100%; background-color: rgb(24, 23, 23)">
+        <img src="assets/9ce7510639c4204bfe43904fad8f361f.png" alt="logo" />
+      </div>
+      <nav>
+        <ul class="navbar">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Genre</a></li>
+          <li><a href="#">Country</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">TV Series</a></li>
+          <li><a href="#">TOP IMDb</a></li>
+        </ul>
+        <div class="right-nav">
+           <div class="right-nav"></div>
+                <a href="#">
+                    <i class="fas fa-search"></i> Search
+                </a>
+          
+         
+        <a href="#"></a>
+        <i class="fas fa-user"></i> <span class="ml-2">Login</span>
+   
+      </nav>
     </header>
-    
+
     <section class="hero">
-        <div class="hero-left">
-            <div class="hero-content">
-                <p>
-                    Over 66,000 Movies and TV Show Episodes available and still updating. Enjoy your Free HD Streaming Now!
-                </p>
-                <div class="search">
-                    <input type="text" class="search-input" placeholder="Enter keywords...">
-                     <button type="button">&#128269;</button>
-                </div>
-            </div>
+      <div class="hero-left">
+        <div class="hero-content">
+          <p style="font-size: 35px;">
+            Over 66,000 Movies and TV Show Episodes available and still
+            updating. Enjoy your Free HD Streaming Now!
+          </p>
+          <div class="search">
+            <input type="text" class="form-control search-input" placeholder="Enter keywords...">
+           <a href="#" class="btn-submit"><i class="fas fa-search"></i></a>
+          </div>
         </div>
-        <div class="hero-image" style="background-image: url('assets/ac04c08481f19f5e1675153472cf5867.jpg');"></div>
+      </div>
+      <div
+        class="hero-image"
+        style="
+          background-image: url('assets/aba581c12512e41e21489aebfd444755.jpg');
+        "
+      ></div>
     </section>
-    
+
     <section class="movie-list">
-        <h2>Movie List</h2>
-        <div class="movie-grid">
-            <div class="movie-item">
-                <img src="assets/045db91c36915a09cf1a721e0a6d1b8f copy.jpg" alt="movie 2">
-            </div>
-            <div class="movie-item">
-                <img src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg" alt="movie 3">
-            </div>
-            <div class="movie-item">
-                <img src="assets/a8ff8bdcb4f403a9615cd4bb818da652.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/4e32cd198a40ad25220920c9f183d800.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/5dc36c675357241b761c923fa3dc53b7.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/mWV2fNBkSTW67dIotVTXDYZhNBj.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>
-            <div class="movie-item">
-                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
-            </div>         
+      <h2>Trending</h2>
+      <div class="movie-grid">
+        <div class="movie-item">
+          <img
+            src="assets/045db91c36915a09cf1a721e0a6d1b8f copy.jpg"
+            alt="movie 2"
+          />
         </div>
+        <div class="movie-item">
+          <img
+            src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg"
+            alt="movie 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img src="assets/a8ff8bdcb4f403a9615cd4bb818da652.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/4e32cd198a40ad25220920c9f183d800.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/5dc36c675357241b761c923fa3dc53b7.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/mWV2fNBkSTW67dIotVTXDYZhNBj.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+        <div class="movie-item">
+          <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie" />
+        </div>
+      </div>
     </section>
- 
+
     <section class="latest-tv-series">
-        <h2>Latest TV Series</h2>
-        <div class="movie-grid">
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 1"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 2"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="Latest TV Series 3"></div>
+      <h2>Latest Movies</h2>
+      <div class="movie-grid">
+        <div class="movie-item">
+          <img
+            src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg"
+            alt="Latest TV Series 1"
+          />
         </div>
+        <div class="movie-item">
+          <img
+            src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg"
+            alt="Latest TV Series 2"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/b4fffbfb047482f1409801a1a286b89f.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/24eeb37352d96a4b9fb4b8015a6b5120.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/4e32cd198a40ad25220920c9f183d800.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/389c88c02553eabeb56b0de5bd807b43.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/aa72cef5070d8019fa2c26b9ad236ad3.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/a1cc3ea68bf2da1c527070531347d199.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/5dc36c675357241b761c923fa3dc53b7.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/389c88c02553eabeb56b0de5bd807b43.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/a1cc3ea68bf2da1c527070531347d199.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+      </div>
     </section>
-    
-    <footer>
+
+    <section class="latest movies">
+      <h2>Latest tv series</h2>
+      <div class="movie-grid">
+        <div class="movie-item">
+        <img
+            src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg"
+            alt="Latest TV Series 1"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg"
+            alt="Latest TV Series 2"
+          />
+        </div>
+        <div class="movie-item">
+          <img
+            src="assets/b4fffbfb047482f1409801a1a286b89f.jpg"
+            alt="Latest TV Series 3"
+          />
+        </div>
+      </div>
+    </section>
+
+  <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h3>About Us</h3>
@@ -328,9 +498,9 @@
             </div>
             <div class="footer-section">
                 <h3>Connect With Us</h3>
-                <p><a href="#">Join Telegram Group</a></p>
-                <p><a href="#">Join Reddit Group</a></p>
-                <p><a href="#">Follow on Twitter</a></p>
+                <p class="fotterbtn"><a href="#" class="fa">Join Telegram Group</a></p>
+                <p class="fotterbtn"><a href="#" class="fa">Join Reddit Group</a></p>
+                <p class="fotterbtn"><a href="#" class="fa">Follow on Twitter</a></p>
             </div>
         </div>
         <p>&copy; 2024 Your Name</p>
@@ -338,6 +508,5 @@
 </body>
 </html>
 
-
-
-
+  </body>
+</html>

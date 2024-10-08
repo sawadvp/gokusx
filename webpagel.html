@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goku Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,15 +57,16 @@
         }
 
         .right-nav a {
+            display: flex;
+            align-items: center;
             color: white;
             margin-left: 20px;
+            text-decoration: none;
             padding: 5px 10px; 
         }
 
-        .search {
-            margin-right: 15px; 
-            display: flex;
-            align-items: center;
+        .right-nav i {
+            margin-right: 5px; /* Space between icon and text */
         }
 
         .search-input {
@@ -78,16 +80,6 @@
 
         .search-input::placeholder {
             color: #aaa; /* Change the color of the placeholder */
-        }
-
-        .search button {
-            padding: 10px 15px;
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-left: 10px;
         }
 
         .hero {
@@ -138,8 +130,7 @@
             border-radius: 5px;
             height: auto; 
         }
-
-        footer {
+         footer {
             padding: 20px;
             background-color: #333;
             color: white;
@@ -179,6 +170,48 @@
         .footer-section a:hover {
             text-decoration: none;
         }
+        .social-button:last-child {
+          margin-right: 0;
+      }
+      .social-button:hover {
+          background-color: #ff4081;
+          color: white;
+      }
+
+      .fotterbtn{
+        width: 160px;
+        height: 30px;
+        background: white;
+        border-radius: 10px;
+      }
+      .fa{
+        color: black;
+      }
+
+      /* Additional styles for footer */
+      footer {
+          background-color: #333;
+          color: white;
+      }
+
+
+  footer {
+    position: relative; /* Needed for absolute positioning of the logo */
+}
+
+.ft-logo {
+    position: absolute; /* Allows positioning within the footer */
+    top: 10px; /* Distance from the top of the footer */
+    right: 20px; /* Distance from the right side of the footer */
+}
+
+.ft-logo img {
+    max-width: 50px; /* Adjust logo size for a smaller look */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
     </style>
 </head>
 <body>
@@ -194,7 +227,9 @@
                 <li><a href="#">TOP IMDb</a></li>
             </ul>
             <div class="right-nav">
-                <a href="#">Search</a>
+                <a href="#">
+                    <i class="fas fa-search"></i> Search
+                </a>
                 <a href="#">Login</a>
             </div>
         </nav>
@@ -207,7 +242,7 @@
                 <p>Enjoy your Free HD Streaming Now!</p>
                 <div class="search">
                     <input type="text" class="search-input" placeholder="Enter keywords...">
-                    <button type="button">🔍</button> <!-- Added search symbol -->
+                    <button type="button">🔍</button> <!-- Retain original button if needed -->
                 </div>
             </div>
         </div>
@@ -244,34 +279,40 @@
         </div>
     </section>
     
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p><a href="#">Terms of Service</a></p>
-                <p><a href="#">Contact</a></p>
-                <p><a href="#">Sitemap</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Movies</h3>
-                <p><a href="#">Action</a></p>
-                <p><a href="#">Comedy</a></p>
-                <p><a href="#">Drama</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>TV Series</h3>
-                <p><a href="#">Fantasy</a></p>
-                <p><a href="#">Horror</a></p>
-                <p><a href="#">Mystery</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <p><a href="#">Join Telegram Group</a></p>
-                <p><a href="#">Join Reddit Group</a></p>
-                <p><a href="#">Follow on Twitter</a></p>
-            </div>
+ <footer>
+    
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p><a href="#">Terms of Service</a></p>
+            <p><a href="#">Contact</a></p>
+            <p><a href="#">Sitemap</a></p>
         </div>
-        <p>&copy; 2024 Your Name</p>
-    </footer>
+        <div class="footer-section">
+            <h3>Movies</h3>
+            <p><a href="#">Action</a></p>
+            <p><a href="#">Comedy</a></p>
+            <p><a href="#">Drama</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>TV Series</h3>
+            <p><a href="#">Fantasy</a></p>
+            <p><a href="#">Horror</a></p>
+            <p><a href="#">Mystery</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>Connect With Us</h3>
+            <p class="fotterbtn"><a href="#" class="fa">Join Telegram Group</a></p>
+            <p class="fotterbtn"><a href="#" class="fa">Join Reddit Group</a></p>
+            <p class="fotterbtn"><a href="#" class="fa">Follow on Twitter</a></p>
+        </div>
+    </div>
+    <div class="ft-logo">
+        <a href="/"><img src="https://img.goku.sx/xxrz/400x400/100/9c/e7/9ce7510639c4204bfe43904fad8f361f/9ce7510639c4204bfe43904fad8f361f.png" alt="GOKU logo"></a>
+    </div>
+    <p>&copy; 2024 Your Name</p>
+</footer>
+
 </body>
 </html>
