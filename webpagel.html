@@ -124,13 +124,54 @@
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
         }
+        .text {
+    margin-top: 10px; /* Space above the text */
+    font-size: 18px; /* Adjust font size */
+    color: #e6eaf5; /* Text color */
+    
+}
+
+
+        .movie-item {
+            position: relative; /* For absolute positioning of icons */
+        }
 
         .movie-item img {
             width: 100%;
             border-radius: 5px;
             height: auto; 
         }
-         footer {
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s; /* Smooth transition for hover */
+            border-radius: 5px; /* Match image border radius */
+        }
+
+        .movie-item:hover .overlay {
+            opacity: 1; /* Show on hover */
+        }
+
+        .overlay i {
+            color: white; /* Icon color */
+            margin: 0 10px; /* Space between icons */
+            font-size: 24px; /* Adjust icon size */
+        }
+
+        .overlay i.play-icon {
+            color: orange; /* Orange color for the play icon */
+        }
+
+        footer {
             padding: 20px;
             background-color: #333;
             color: white;
@@ -170,47 +211,71 @@
         .footer-section a:hover {
             text-decoration: none;
         }
+
         .social-button:last-child {
-          margin-right: 0;
-      }
-      .social-button:hover {
-          background-color: #ff4081;
-          color: white;
-      }
+            margin-right: 0;
+        }
 
-      .fotterbtn{
-        width: 160px;
-        height: 30px;
-        background: white;
-        border-radius: 10px;
-      }
-      .fa{
-        color: black;
-      }
+        .social-button:hover {
+            background-color: #ff4081;
+            color: white;
+        }
 
-      /* Additional styles for footer */
-      footer {
-          background-color: #333;
-          color: white;
-      }
+        .fotterbtn {
+            width: 160px;
+            height: 30px;
+            background: white;
+            border-radius: 10px;
+        }
 
+        .fa {
+            color: black;
+        }
 
-  footer {
-    position: relative; /* Needed for absolute positioning of the logo */
+        /* Additional styles for footer */
+        footer {
+            background-color: #333;
+            color: white;
+        }
+
+        footer {
+            position: relative; /* Needed for absolute positioning of the logo */
+        }
+   .fotterbtn {
+    width: auto; /* Adjust width to fit text */
+    height: 30px; /* Set height */
+    background: white; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+    margin: 5px 0; /* Space between buttons */
 }
 
-.ft-logo {
-    position: absolute; /* Allows positioning within the footer */
-    top: 10px; /* Distance from the top of the footer */
-    right: 20px; /* Distance from the right side of the footer */
+.fotterbtn a {
+    display: flex; /* Flex for alignment */
+    align-items: center; /* Center icon and text */
+    color: black; /* Text color */
+    text-decoration: none; /* No underline */
+    padding: 5px; /* Padding for spacing */
 }
 
-.ft-logo img {
-    max-width: 50px; /* Adjust logo size for a smaller look */
-    height: auto; /* Maintain aspect ratio */
+.fotterbtn a:hover {
+    color: #e96325; /* Change color on hover */
 }
 
 
+
+ .ft-logo {
+            position: absolute; /* Allows positioning within the footer */
+            top: 10px; /* Distance from the top of the footer */
+            right: 10px; /* Distance from the right side of the footer */
+        }
+
+        .ft-logo img {
+            max-width: 50px; /* Adjust logo size for a smaller look */
+            height: auto; /* Maintain aspect ratio */
+        }
+      
 
     </style>
 </head>
@@ -234,41 +299,146 @@
             </div>
         </nav>
     </header>
-    
-    <section class="hero">
-        <div class="hero-left">
-            <div class="hero-content">
-                <h1>Over 66,000 Movies and TV Show Episodes available and still updating.</h1>
-                <p>Enjoy your Free HD Streaming Now!</p>
-                <div class="search">
-                    <input type="text" class="search-input" placeholder="Enter keywords...">
-                    <button type="button">🔍</button> <!-- Retain original button if needed -->
-                </div>
+   <section class="hero">
+    <div class="hero-left">
+        <div class="hero-content">
+            <p style="font-size: 35px;">
+                Over 66,000 Movies and TV Show Episodes available and still
+                updating. Enjoy your Free HD Streaming Now!
+            </p>
+            <div class="search">
+                <input type="text" class="form-control search-input" placeholder="Enter keywords...">
+                <a href="#" class="btn-submit"><i class="fas fa-search"></i></a>
             </div>
+            <div class="text"><span>✨‍</span> Help GOKU to viral</div>
         </div>
-        <div class="hero-image" style="background-image: url('assets/ac04c08481f19f5e1675153472cf5867.jpg');"></div>
-    </section>
+    </div>
+    <div class="hero-image" style="background-image: url('assets/aba581c12512e41e21489aebfd444755.jpg');"></div>
+</section>
+
     
     <section class="movie-list">
         <h2>Movie List</h2>
         <div class="movie-grid">
-            <div class="movie-item"><img src="assets/045db91c36915a09cf1a721e0a6d1b8f copy.jpg" alt="movie 2"></div>
-            <div class="movie-item"><img src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg" alt="movie 3"></div>
-            <div class="movie-item"><img src="assets/a8ff8bdcb4f403a9615cd4bb818da652.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/4e32cd198a40ad25220920c9f183d800.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/5dc36c675357241b761c923fa3dc53b7.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/mWV2fNBkSTW67dIotVTXDYZhNBj.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>
-            <div class="movie-item"><img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie"></div>         
+            <div class="movie-item">
+                <img src="assets/045db91c36915a09cf1a721e0a6d1b8f copy.jpg" alt="movie 2">
+                <div class="overlay">
+            <i class="fas fa-play play-icon"></i>
+            <i class="fas fa-plus"></i>
+        </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/7a78d2a44e33d64d6c35e1a2c1e2cdc9.jpg" alt="movie 3">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/a8ff8bdcb4f403a9615cd4bb818da652.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/176f0ad8b13cdae8f51436806dfc7432.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/884a89eed3fa82258d6c3fcde6fe61a3.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/4e32cd198a40ad25220920c9f183d800.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/ac04c08481f19f5e1675153472cf5867.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/5dc36c675357241b761c923fa3dc53b7.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/mWV2fNBkSTW67dIotVTXDYZhNBj.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="assets/6ed99cdc1888777dd5be6e5d11e52770.jpg" alt="movie">
+                <div class="overlay">
+                    <i class="fas fa-play play-icon"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>         
         </div>
     </section>
  
@@ -279,9 +449,7 @@
         </div>
     </section>
     
- <footer>
-    
-   <footer>
+    <footer>
     <div class="footer-container">
         <div class="footer-section">
             <h3>About Us</h3>
@@ -301,18 +469,38 @@
             <p><a href="#">Horror</a></p>
             <p><a href="#">Mystery</a></p>
         </div>
-        <div class="footer-section">
-            <h3>Connect With Us</h3>
-            <p class="fotterbtn"><a href="#" class="fa">Join Telegram Group</a></p>
-            <p class="fotterbtn"><a href="#" class="fa">Join Reddit Group</a></p>
-            <p class="fotterbtn"><a href="#" class="fa">Follow on Twitter</a></p>
-        </div>
+       <div class="footer-section">
+    <h3>Connect With Us</h3>
+    <div class="ft-connect">
+    <div class="fotterbtn">
+        <a href="#">
+            <i class="fab fa-telegram-plane mr-2"></i> Join Group Telegram
+        </a>
     </div>
+    <div class="fotterbtn">
+        <a href="#">
+            <i class="fab fa-reddit-alien mr-2"></i> Join Group Reddit
+        </a>
+    </div>
+    <div class="fotterbtn">
+        <a href="#">
+            <i class="fab fa-twitter mr-2"></i> Join Twitter
+        </a>
+    </div>
+</div>
+
+
+
+
+    </div>
+   </div>
     <div class="ft-logo">
-        <a href="/"><img src="https://img.goku.sx/xxrz/400x400/100/9c/e7/9ce7510639c4204bfe43904fad8f361f/9ce7510639c4204bfe43904fad8f361f.png" alt="GOKU logo"></a>
+        <a href="/"><img src="assets/9ce7510639c4204bfe43904fad8f361f.png" alt="GOKU logo"></a>
     </div>
     <p>&copy; 2024 Your Name</p>
 </footer>
+
+
 
 </body>
 </html>
